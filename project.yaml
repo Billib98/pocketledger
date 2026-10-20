@@ -1,0 +1,13 @@
+# Configurazione del progetto per l'hub (bozza, usata da M2 in poi)
+name: pocketledger
+repo_path: .            # da sostituire col percorso reale del clone
+default_branch: main
+test_cmd: python -m pytest -q
+permissions:            # livelli L1-L6 della Fase 3
+  max_auto_level: L4    # fino a commit locali in automatico
+  require_approval: [L5, L6]
+forbidden_paths:
+  - secrets_fake.env
+limits:
+  task_timeout_minutes: 20
+  max_retries: 2
